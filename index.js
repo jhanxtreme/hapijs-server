@@ -36,6 +36,18 @@ server.route({
   }
 });
 
+//dynamic routes
+server.route({
+  method: 'GET',
+  path: '/{name}',
+  handler: function(request, response){
+    var content = '';
+    content += '<p>Hello ' + request.params.name + '</p>';
+    content += '<p>Current route: <em>/'+ request.params.name +'</em></p>';
+    response(content);
+  }
+});
+
 
 server.start(function(){
   console.log('Server has started at http://'+ config.host + ':' + config.port);
