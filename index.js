@@ -36,5 +36,7 @@ server.route({
   }
 });
 
-console.log('Server has started at http://'+ config.host + ':' + config.port);
-server.start();
+
+server.start(function(){
+  console.log('Server has started at http://'+ config.host + ':' + config.port);
+});
